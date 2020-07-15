@@ -1,0 +1,5 @@
+<%--pragment 조각 include전용 jsp의 조각 jspf --%>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%! int visit; %>
+<% visit++; %>
+<h2>방문자 수: <%=visit %></h2>
