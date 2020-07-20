@@ -1,0 +1,13 @@
+
+웹브라우저정보요청  -> 	C		-> 
+
+정보요청(매핑주소) -> 스프링 Controller	-> 서비스		 ->   Model
+			JAVA		  Service	      *DAO
+		      매핑주소등록		  Service Impl  +     *DAOImpl	
+			|		 고객의 추가 요구 사항    |  ㄴ->MyBatis
+			|		 내용보기+ 조회수 증가    |	  +매체xml
+			view		 =>트랜잭션 적용대상      |
+			JSTL+EL		   Aop 』	      ㄴ>Oracle
+					 (관념적 지향프로그램)
+					  ->데이터 일치성
+					  중간매개체
