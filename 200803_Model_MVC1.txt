@@ -1,0 +1,28 @@
+자바 웹프로그래밍을 하는것에 있어서 코드를 유지보수 하기 좋게 코딩하는것 
+-MVC Model- 
+
+client			WAS		DS
+      <-------->    	      <----------->	
+	ㄴ 프론트	     join_ok		ㄴ 백엔드
+join_form
+-ui 구성
+-css html 작업
+
+		   
+*join_ok(Servlet)
+-요청 파라미터처리(request.getParameter)
+-DB 연동
+-ui 연결 (sendredirect, forward)
+-문제점: 할일이 과부화 
+	ㄴ 요청마다 sevlet 구성해야됨
+ 		ㄴ(..._ok.jsp x123412312...)
+->일들을 객체 지향적 특성을 살려 나눠서 처리하자
+   --->MVC모델
+
+client		 	WAS		DS
+		  -controller(Servlet)
+		   ㄴ(ok sevlet1개만 구성)
+		  -Model		(java,class,interface<-->
+		   ㄴdb요청 전담
+        Response <-View(jsp)
+		    ㄴwelcome,id_fail,pw_fail ui		

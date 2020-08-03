@@ -1,0 +1,22 @@
+*MVC Model 1 Architecture
+client	   WAS 		DB
+         join_ok
+         ->Model
+  	 -UI
+
+
+
+
+*MVC Model 2 Architecture
+
+웹 애플리케이션에는 서블릿/JSP와 함께 자바 클래스도 같이 사용함
+
+* 가장 이상적인 구조
+
+자바 클래스 - 데이터베이스와 통신/주요 비지니스 로직 구현
+
+서블릿 - 사용자의 요청 처리/제어 컨트롤러 구현
+
+JSP - 화면에 보이는 페이지 구성
+
+이와 같은 구조를 MVC,Model View Controller라고 명칭함
