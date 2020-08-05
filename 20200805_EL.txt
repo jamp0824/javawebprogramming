@@ -1,0 +1,26 @@
+* EL(Expression Language) - EL은 일종의 스크립트 언어로 자료 타입, 수치 연산자, 
+논리 연산자, 비교 연산자 등을 제공하며 표현식을 대체할 수 있습니다. 
+- EL의 사용법 ex) 표현식 <%= value %> // EL ${value}
+- EL 내부에 사용하는 연산자 1. 산술: +, -, *, /, % 2. 관계: ==, !=, <, <=, >, >=
+3. 조건: a ? b : c (a조건식이 참이면 b를 실행, 거짓이면 c를 실행) 
+4. 논리: &&, ||
+
+* 액션 태그와 EL - 액션태그 <jsp:getProperty name="member" property="name"/> - EL -> ${member.name} 
+- EL의 내장객체 
+1. pageScope: JSP의 page 객체를 참조하는 객체 
+2. requestScope: JSP의 request 객체를 참조하는 객체 
+3. sessionScope: JSP의 session 객체를 참조하는 객체 
+4. applicationScope: JSP의 application 객체를 참조하는 객체 
+5. param: 요청 파라미터를 참조하는 객체 
+6. paramValues: 요청 파라미터(배열)를 참조하는 객체 
+7. initParam: 서블릿컨텍스트 초기화 파라미터를 참조하는 객체 
+8. cookie: 쿠키 객체를 참조하는 객체.
+
+* JSTL (JSP Standard Tag Library) 
+
+- JSP의 경우 HTML태그와 같이 사용되어 전체적인 코드의 가독성이 떨어집니다. 
+- 그래서 이런 단점을 보완하고 만들어진 것이 JSTL입니다. 
+- JSTL을 사용하면 자바의 제어문을 HTML 태그화 시킬 수 있습니다.
+- JSTL의 경우 우리가 사용하는 Tomcat 기본 컨테이너에 포함되어 있지 않으므로, 
+별도의 라이브러리를 설치하고 사용합니다.
+- 설치 방법: http://jakarta.apache.org 접속
