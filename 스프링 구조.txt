@@ -1,0 +1,15 @@
+src/main/java
+ㄴ 자바 클래스와 인터페이스 .java /.class
+
+src/main/resources
+ㄴ 설정 스프링에대한 설정파일 xml파일이 들어갈 공간
+
+src/test/
+ㄴ 단위 테스트 수행할때 
+
+src
+   main 
+	ㄴ 이미지, html, css, java script
+
+pom.xml 
+	ㄴ 라이브러리를 다운 받기위한 파일
