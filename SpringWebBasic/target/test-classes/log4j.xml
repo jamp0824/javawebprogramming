@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.cpring.web">
+	<logger name="com.spring.web">
 		<level value="info" />
 	</logger>
 	
