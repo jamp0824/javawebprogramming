@@ -43,6 +43,10 @@ public class UserVO {
 		this.userName = userName;
 		this.hobby = hobby;
 	}
+	@Override
+	public String toString() {
+		return "UserVO [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", hobby=" + hobby + "]";
+	}
 	
 	
 }
