@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <h2>test2.jsp 페이지입니다.</h2>
 <p>
 	컨트롤러가 전달한 데이터: ${userName}

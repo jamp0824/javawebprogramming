@@ -34,19 +34,17 @@ public class UserVO {
 		this.hobby = hobby;
 	}
 	
-	public UserVO() {}
-	
-	public UserVO(String userId, String userPw, String userName, List<String> hobby) {
-		super();
-		this.userId = userId;
-		this.userPw = userPw;
-		this.userName = userName;
-		this.hobby = hobby;
-	}
 	@Override
 	public String toString() {
 		return "UserVO [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", hobby=" + hobby + "]";
 	}
 	
 	
+	
 }
+
+
+
+
+
+

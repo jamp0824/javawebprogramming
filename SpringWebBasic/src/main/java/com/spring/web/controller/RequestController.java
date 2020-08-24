@@ -49,12 +49,13 @@ public class RequestController {
 		return "request/req-ex01";
 	}
 	
-	
-	//컨트롤러의 요청메서드를 void리턴타입으로 지정
+	//컨트롤러의 요청메서드를 void리턴타입으로 지정.
 	@GetMapping("/req-ex02")
 	public void reqEx02() {
 		System.out.println("/request/req-ex02 요청!");
 	}
+	
+	
 	//요청 파라미터 받아보기
 	@GetMapping("/param")
 	public String paramTest(HttpServletRequest request) {
@@ -68,76 +69,93 @@ public class RequestController {
 		return "";
 	}
 	
-	//////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////
 	@GetMapping("/join")
 	public void register() {
 		System.out.println("/request/join : GET");
 	}
+	
 	/*
-	 # 1.전통적인 jsp/servlet의 피라미터 읽기 처리 바업ㅂ
-	 -HttpServletRequest객체를 사용
-	 */
-/*	@PostMapping("/join")
+	 # 1. 전통적인 jsp/servlet의 파라미터 읽기처리 방법
+	  - HttpServletRequest객체를 사용
+	 
+	@PostMapping("/join")
 	public String register(HttpServletRequest request) {
 		System.out.println("/request/join : POST");
 		
-		System.out.println("ID: "+request.getParameter("userId"));
-		System.out.println("PW: "+request.getParameter("userPw"));
-		System.out.println("HOBBY: "+ Arrays.toString(request.getParameterValues("hobby")));
+		System.out.println("ID: " + request.getParameter("userId"));
+		System.out.println("PW: " + request.getParameter("userPw"));
+		System.out.println("HOBBY: " 
+		   + Arrays.toString(request.getParameterValues("hobby")));		
+		
 		return "request/join";
 	}
 	*/
+	
 	/*
-	 * # 2. @RequestParam 아노테이션을 이용한 요청 파라미터 처리
-	 * @PostMapping("/join") public void register(@RequestParam("userId") String id,
-	 * 
-	 * @RequestParam("userPw") String pw,
-	 * 
-	 * @RequestParam(value="hobby", required=false, defaultValue="no hobby person")
-	 * List<String> hobbys) {
-	 * 
-	 * System.out.println("ID:"+id); System.out.println("PW:"+pw);
-	 * System.out.println("HOBBY:"+hobbys.toString());
-	 * 
-	 * }
+	 # 2. @RequestParam 아노테이션을 이용한 요청 파라미터 처리
+	 
+	@PostMapping("/join")
+	public void register(@RequestParam("userId") String id, 
+						@RequestParam("userPw") String pw,
+						@RequestParam(value="hobby", required=false, defaultValue="no hobby person") List<String> hobbys) {
+		
+		System.out.println("ID: " + id);
+		System.out.println("PW: " + pw);
+		System.out.println("HOBBY: " + hobbys.toString());
+		
+	}
+	*/
+	
+	/*
+	 # 3. 커맨드 객체를 활용한 파라미터 처리
 	 */
 	@PostMapping("/join")
 	public void register(UserVO user) {
-		System.out.println("ID:" +user.getUserId());
-		System.out.println("PW:" +user.getUserPw());
-		System.out.println("NAME:" +user.getUserName());
-		System.out.println("HOBBY:"+user.getHobby());
+		
+		System.out.println("ID: " + user.getUserId());
+		System.out.println("PW: " + user.getUserPw());
+		System.out.println("NAME: " + user.getUserName());
+		System.out.println("HOBBY: " + user.getHobby());
+		
 	}
 	
-///////////////////////////////////////////
+	///////////////////////////////////////////
 	
-//req-quiz 정답
-@RequestMapping(value="/quiz", method=RequestMethod.GET)
-public String quiz() {
-return "request/req-quiz";
+	//req-quiz 정답
+	@RequestMapping(value="/quiz", method=RequestMethod.GET)
+	public String quiz() {
+		return "request/req-quiz";
+	}
+	
+	/*@RequestMapping(value="/quiz", method=RequestMethod.POST)
+	public String quiz(@RequestParam("userId") String id,
+					@RequestParam("userPw") String pw) {
+	
+		if(id.equals("abc1234") && pw.equals("xxx4321"))
+			return "request/login-success";
+		else
+			return "request/login-fail";
+	}*/
+	
+	@RequestMapping(value="/quiz", method=RequestMethod.POST)
+	public String quiz(UserVO user) {
+	
+		if(user.getUserId().equals("abc1234") 
+				&& user.getUserPw().equals("xxx4321"))
+			return "request/login-success";
+		else
+			return "request/login-fail";
+	}
+	
 }
 
-/*@RequestMapping(value="/quiz", method=RequestMethod.POST)
-public String quiz(@RequestParam("userId") String id,
-@RequestParam("userPw") String pw) {
 
-if(id.equals("abc1234") && pw.equals("xxx4321"))
-return "request/login-success";
-else
-return "request/login-fail";
-}*/
 
-@RequestMapping(value="/quiz", method=RequestMethod.POST)
-public String quiz(UserVO user) {
 
-if(user.getUserId().equals("abc1234") 
-&& user.getUserPw().equals("xxx4321"))
-return "request/login-success";
-else
-return "request/login-fail";
-}
 
-}
+
+
 
 
 

@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>req-ex02.jsp 파일입니다!!</h2>
+	
+	<h2>req-ex02.jsp 파일입니다!!</h2>
+	
 </body>
 </html>
